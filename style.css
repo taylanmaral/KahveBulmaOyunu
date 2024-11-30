@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Yatay taşmayı engelle */
 }
 
 #game-container {
@@ -18,17 +19,19 @@ body {
 
 #game-area {
     width: 100%;
-    max-width: 500px;
-    height: 500px;
+    max-width: 400px; /* Oyun alanının genişliğini sınırla */
+    height: 400px; /* Oyun alanının yüksekliğini sabit tut */
     margin: 20px auto;
     position: relative;
     background: url('coffee-background.jpg') no-repeat center center;
     background-size: cover;
     border: 2px solid #333;
+    overflow: hidden; /* Taşan öğeleri gizle */
+    box-sizing: border-box; /* Kenarlık boyutları dahil olsun */
 }
 
 #coffee-cup {
-    width: 10%; /* Ekran boyutuna göre ayarlanır */
+    width: 10%;
     max-width: 50px;
     position: absolute;
     cursor: pointer;
@@ -43,7 +46,7 @@ body {
 /* Responsive Ayarlar */
 @media (max-width: 768px) {
     #game-area {
-        height: 80vw; /* Genişlik oranına göre yükseklik */
+        height: 70vw; /* Genişlik oranına göre yükseklik */
     }
 
     #coffee-cup {
@@ -57,7 +60,7 @@ body {
 
 @media (max-width: 480px) {
     #game-area {
-        height: 70vw; /* Daha dar ekranlar için oyun alanı küçültülür */
+        height: 60vw; /* Daha dar ekranlar için oyun alanı küçültülür */
     }
 
     #coffee-cup {
