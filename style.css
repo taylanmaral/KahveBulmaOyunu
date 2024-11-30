@@ -8,16 +8,17 @@ body {
 }
 
 #game-container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px;
     border: 1px solid #ccc;
     background: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #game-area {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: 500px;
     margin: 20px auto;
     position: relative;
@@ -27,7 +28,8 @@ body {
 }
 
 #coffee-cup {
-    width: 50px;
+    width: 10%; /* Ekran boyutuna göre ayarlanır */
+    max-width: 50px;
     position: absolute;
     cursor: pointer;
     display: none; /* Başlangıçta görünmez */
@@ -36,4 +38,33 @@ body {
 #score-board, #timer {
     font-size: 18px;
     margin: 10px;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    #game-area {
+        height: 80vw; /* Genişlik oranına göre yükseklik */
+    }
+
+    #coffee-cup {
+        width: 12%; /* Daha büyük bir kahve bardağı */
+    }
+
+    #score-board, #timer {
+        font-size: 16px; /* Daha küçük yazılar */
+    }
+}
+
+@media (max-width: 480px) {
+    #game-area {
+        height: 70vw; /* Daha dar ekranlar için oyun alanı küçültülür */
+    }
+
+    #coffee-cup {
+        width: 15%; /* Mobilde kahve bardağı daha görünür */
+    }
+
+    #score-board, #timer {
+        font-size: 14px;
+    }
 }
